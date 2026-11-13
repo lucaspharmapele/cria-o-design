@@ -74,7 +74,7 @@
     <polygon points="0,179 148,165 148,210 0,210" fill="#2288c9"/>
     <polygon points="0,174 148,160 148,168 0,182" fill="#163d6c"/>
     <rect x="103" y="178" width="28" height="28" fill="#ffffff"/>
-    <image x="104" y="179" width="26" height="26" href="qr-whatsapp.png" xlink:href="qr-whatsapp.png"/>
+    <image x="104" y="179" width="26" height="26" href="../apoio/qr-whatsapp.png" xlink:href="../apoio/qr-whatsapp.png"/>
     <g aria-label="Ícone de leitura Lucide" transform="translate(93 185) scale(.28)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/>
     </g>

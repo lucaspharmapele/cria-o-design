@@ -1,0 +1,79 @@
+var CriacaoDesign = (function () {
+    function run(config) {
+        try {
+            if (app.documents.length === 0) throw new Error("Abra o SVG antes de executar o script.");
+            var doc = app.activeDocument;
+            if (doc.name.toLowerCase() !== config.documentName) throw new Error("Este script foi criado para " + config.documentName + ".");
+            try { doc.layers.getByName("TEXTO EDITAVEL"); throw new Error("O texto já foi reconstruído."); } catch (e) { if (e.message === "O texto já foi reconstruído.") throw e; }
+
+            for (var i = 0; i < config.texts.length; i++) getFont(config.texts[i].font);
+            var removal = removeSourceText(doc, config);
+            var layer = doc.layers.add();
+            layer.name = "TEXTO EDITAVEL";
+
+            for (var j = 0; j < config.texts.length; j++) createAreaText(doc, layer, config.texts[j]);
+            alert(config.page + ": " + config.texts.length + " caixas criadas; remoção " + removal + ".");
+        } catch (error) {
+            alert("Criação Design: " + error.message);
+        }
+    }
+
+    function removeSourceText(doc, config) {
+        try {
+            var group = doc.groupItems.getByName(config.sourceGroupName);
+            group.remove();
+            return "seletiva do grupo " + config.sourceGroupName;
+        } catch (_) {}
+
+        var count = doc.textFrames.length;
+        if (count < config.sourceTextMin || count > config.sourceTextMax) {
+            throw new Error("Não foi possível identificar os textos originais com segurança. Encontrados: " + count + "; esperado: " + config.sourceTextMin + " a " + config.sourceTextMax + ". Nenhum texto foi removido.");
+        }
+        for (var i = count - 1; i >= 0; i--) doc.textFrames[i].remove();
+        return "protegida por contagem (" + count + " textos)";
+    }
+
+    function createAreaText(doc, layer, block) {
+        var art = doc.artboards[doc.artboards.getActiveArtboardIndex()].artboardRect;
+        var left = art[0] + mm(block.x);
+        var top = art[1] - mm(block.y);
+        var path = layer.pathItems.rectangle(top, left, mm(block.width), mm(block.height));
+        path.stroked = false;
+        path.filled = false;
+        var frame = doc.textFrames.areaText(path);
+        frame.name = "TEXT__" + block.name;
+        frame.contents = block.text;
+
+        var range = frame.textRange;
+        range.characterAttributes.textFont = getFont(block.font);
+        range.characterAttributes.size = block.size;
+        range.characterAttributes.leading = block.leading;
+        range.characterAttributes.tracking = block.tracking;
+        range.characterAttributes.fillColor = rgb(block.color);
+        range.paragraphAttributes.justification = justification(block.align);
+        if (block.rotation) frame.rotate(block.rotation);
+    }
+
+    function justification(value) {
+        if (value === "center") return Justification.CENTER;
+        if (value === "right") return Justification.RIGHT;
+        return Justification.LEFT;
+    }
+
+    function getFont(name) {
+        try { return app.textFonts.getByName(name); }
+        catch (_) { throw new Error("Fonte não encontrada no Illustrator: " + name); }
+    }
+
+    function rgb(hex) {
+        var color = new RGBColor();
+        color.red = parseInt(hex.substr(0, 2), 16);
+        color.green = parseInt(hex.substr(2, 2), 16);
+        color.blue = parseInt(hex.substr(4, 2), 16);
+        return color;
+    }
+
+    function mm(value) { return value * 72 / 25.4; }
+
+    return { run: run };
+})();

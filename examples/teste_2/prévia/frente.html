@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Teste 2 — Frente</title>
+  <style>
+    @font-face { font-family: MazzardH; src: url('../../../assets/fonts/mazzard/MazzardH-Bold.otf'); font-weight: 700; }
+    @font-face { font-family: MazzardH; src: url('../../../assets/fonts/mazzard/MazzardH-Black.otf'); font-weight: 900; }
+    @font-face { font-family: MazzardM; src: url('../../../assets/fonts/mazzard/MazzardM-Regular.otf'); font-weight: 400; }
+    @font-face { font-family: MazzardM; src: url('../../../assets/fonts/mazzard/MazzardM-SemiBold.otf'); font-weight: 600; }
+    @font-face { font-family: MazzardM; src: url('../../../assets/fonts/mazzard/MazzardM-Bold.otf'); font-weight: 700; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: #e3e8eb; }
+    body { display: grid; place-items: center; padding: 20px; }
+    .artboard { position: relative; width: 148mm; height: 210mm; overflow: hidden; background: #f5f7f8; }
+    .shape, .text-block, .asset { position: absolute; }
+    .text-block { white-space: pre-line; margin: 0; }
+    .h { font-family: MazzardH, sans-serif; }
+    .m { font-family: MazzardM, sans-serif; }
+  </style>
+</head>
+<body>
+  <main class="artboard" data-page="frente" data-width-mm="148" data-height-mm="210">
+    <div class="shape" style="left:0;top:0;width:148mm;height:210mm;background:#f5f7f8"></div>
+    <div class="shape" style="left:0;top:0;width:148mm;height:78mm;background:#163d6c"></div>
+    <div class="shape" style="left:-10mm;top:67mm;width:170mm;height:12mm;background:#2288c9;transform:rotate(-4deg)"></div>
+    <div class="shape" style="left:119mm;top:-12mm;width:36mm;height:54mm;border:0.6mm solid #fff;opacity:.22;transform:rotate(12deg)"></div>
+    <div class="shape" style="left:126mm;top:-3mm;width:22mm;height:33mm;border:0.35mm solid #fff;opacity:.28;transform:rotate(12deg)"></div>
+
+    <div id="brand" class="text-block h" data-role="brand" data-ai-font="MazzardH-Bold" style="left:13mm;top:10mm;width:80mm;height:8mm;color:#fff;font-size:5mm;line-height:6mm;font-weight:700;letter-spacing:.18mm">PHARMAPELE</div>
+    <div id="store" class="text-block m" data-role="label" data-ai-font="MazzardM-Bold" style="left:13mm;top:18mm;width:50mm;height:5mm;color:#5fc3f0;font-size:2.6mm;line-height:3.2mm;font-weight:700;letter-spacing:.65mm">PAULISTA</div>
+    <div id="headline" class="text-block h" data-role="title" data-ai-font="MazzardH-Black" style="left:13mm;top:38mm;width:122mm;height:30mm;color:#fff;font-size:9.2mm;line-height:9.5mm;font-weight:900;letter-spacing:-.18mm;transform:rotate(-1.5deg)">CUIDAR&#10;DE VOCÊ.</div>
+
+    <div class="shape" style="left:13mm;top:91mm;width:29mm;height:4mm;background:#2288c9"></div>
+    <div id="intro" class="text-block m" data-role="paragraph" data-ai-font="MazzardM-Regular" style="left:48mm;top:88mm;width:84mm;height:16mm;color:#31465c;font-size:3.45mm;line-height:5mm;font-weight:400">Você merece um momento de cuidado único,&#10;com ciência, beleza e acolhimento.</div>
+
+    <div class="shape" style="left:8mm;top:113mm;width:128mm;height:46mm;background:#2288c9;transform:rotate(1.2deg)"></div>
+    <div class="shape" style="left:8mm;top:113mm;width:8mm;height:46mm;background:#163d6c;transform:rotate(1.2deg)"></div>
+    <img class="asset" src="../../../assets/icons/lucide/sparkles.svg" alt="" style="left:116mm;top:124mm;width:13mm;height:13mm;opacity:.8">
+    <div id="coupon-label" class="text-block m" data-role="label" data-ai-font="MazzardM-Bold" style="left:23mm;top:120mm;width:80mm;height:5mm;color:#fff;font-size:2.6mm;line-height:3.2mm;font-weight:700;letter-spacing:.55mm">APRESENTE ESTE CUPOM</div>
+    <div id="coupon-title" class="text-block h" data-role="title" data-ai-font="MazzardH-Black" style="left:23mm;top:130mm;width:91mm;height:17mm;color:#fff;font-size:6.1mm;line-height:6.7mm;font-weight:900">REVITALIZAÇÃO FACIAL&#10;GRATUITA</div>
+    <div id="coupon-note" class="text-block m" data-role="paragraph" data-ai-font="MazzardM-Regular" style="left:23mm;top:150mm;width:90mm;height:6mm;color:#fff;font-size:2.7mm;line-height:3.5mm;font-weight:400">Agende sua experiência em nossa loja.</div>
+
+    <div class="shape" style="left:13mm;top:174mm;width:121mm;height:.7mm;background:#2288c9"></div>
+    <img class="asset" src="../../../assets/icons/simple-icons/whatsapp.svg" alt="" style="left:13mm;top:181mm;width:5.5mm;height:5.5mm">
+    <img class="asset" src="../../../assets/icons/simple-icons/instagram.svg" alt="" style="left:13mm;top:190mm;width:5.5mm;height:5.5mm">
+    <img class="asset" src="../../../assets/icons/lucide/map-pin.svg" alt="" style="left:82mm;top:181mm;width:5.5mm;height:5.5mm">
+    <div id="whatsapp" class="text-block m" data-role="contact" data-ai-font="MazzardM-Bold" style="left:22mm;top:181mm;width:55mm;height:6mm;color:#163d6c;font-size:3mm;line-height:4mm;font-weight:700">81 99559-2532</div>
+    <div id="instagram" class="text-block m" data-role="contact" data-ai-font="MazzardM-SemiBold" style="left:22mm;top:190mm;width:55mm;height:6mm;color:#2288c9;font-size:2.8mm;line-height:4mm;font-weight:600">@pharmapelepaulista</div>
+    <div id="address" class="text-block m" data-role="contact" data-ai-font="MazzardM-Regular" style="left:91mm;top:180.5mm;width:45mm;height:15mm;color:#31465c;font-size:2.4mm;line-height:3.6mm;font-weight:400">Av. Mal. Floriano Peixoto,&#10;56 – 1A • Paulista</div>
+  </main>
+</body>
+</html>

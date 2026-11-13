@@ -10,10 +10,12 @@ O SVG será aberto no Illustrator e tratado por um script JSX. Esse script deve 
 
 1. O briefing informa conteúdo, formato, largura, altura e unidade.
 2. A composição é criada em HTML e CSS nas dimensões exatas do briefing.
-3. O DOM é convertido em SVG.
-4. O SVG é aberto no Illustrator.
-5. Um script JSX específico para o SVG reorganiza os elementos que não sobreviveram corretamente à conversão.
-6. O arquivo permanece editável para a finalização manual.
+3. O HTML é apresentado ao usuário e refinado até receber aprovação explícita.
+4. O trabalho permanece somente em HTML/CSS até o usuário solicitar a exportação.
+5. Somente após essa solicitação o DOM é convertido em SVG e o JSX correspondente é gerado.
+6. O SVG é aberto no Illustrator.
+7. O JSX específico reorganiza os elementos que não sobreviveram corretamente à conversão.
+8. O arquivo permanece editável para a finalização manual.
 
 ## Requisitos definidos
 

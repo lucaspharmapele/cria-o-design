@@ -22,7 +22,7 @@ Este documento registra as regras visuais que orientarão as composições. Ele 
 
 Adicionar logotipos, grafismos, ícones SVG e imagens PNG ou JPG em:
 
-`C:\Users\eduardoalbuquerque\Documents\ChatGPT\AJUSTES RÁPIDOS\criação-design\gráficos`
+`C:\Users\eduardoalbuquerque\Documents\ChatGPT\AJUSTES RÁPIDOS\criação-design\assets\brand`
 
 Antes de criar uma peça, consultar esse acervo e reutilizar os elementos apropriados.
 
@@ -69,7 +69,7 @@ Usar exclusivamente a família Mazzard. As subfamílias H, M e L podem ser usada
 
 ### Arquivos e nomes verificados
 
-Em 13 de novembro de 2026, o acervo `fontes/` continha 54 arquivos OTF: 18 faces de Mazzard H, 18 de Mazzard M e 18 de Mazzard L. Cada subfamília possui Thin, Extra Light, Light, Regular, Medium, Semi Bold, Bold, Extra Bold e Black, com versões normal e itálica.
+Em 13 de novembro de 2026, o acervo `assets/fonts/mazzard/` continha 54 arquivos OTF: 18 faces de Mazzard H, 18 de Mazzard M e 18 de Mazzard L. Cada subfamília possui Thin, Extra Light, Light, Regular, Medium, Semi Bold, Bold, Extra Bold e Black, com versões normal e itálica.
 
 Os metadados internos dos arquivos usam:
 
@@ -112,7 +112,7 @@ As 54 faces do acervo também estão instaladas para o usuário atual do Windows
 ## Referências
 
 - Manual oficial: aguardando inclusão no acervo.
-- Pasta de logos e elementos: `gráficos/`.
+- Pasta de logos e elementos: `assets/brand/`.
 - Fontes: família Mazzard instalada para o usuário atual.
 - Peças aprovadas como referência: serão fornecidas posteriormente.
 - Desconsiderar peças anteriores que fujam do rebranding atual.

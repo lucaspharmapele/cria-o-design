@@ -1,4 +1,9 @@
-# Rascunho da skill de criação de design
+---
+name: criacao-design
+description: Criar peças gráficas fixas da Pharmapele em HTML/CSS, exportá-las para SVG e gerar JSX para reconstruir textos editáveis no Adobe Illustrator.
+---
+
+# Criação de design
 
 ## Propósito
 
@@ -20,6 +25,21 @@ Não usar para definir a identidade visual da marca. Essa responsabilidade perte
 Antes de iniciar qualquer trabalho, perguntar obrigatoriamente o nome da tarefa. Não criar HTML, SVG, JSX ou outros arquivos da peça enquanto esse nome não tiver sido informado.
 
 Criar uma pasta exclusiva com o nome completo da tarefa para centralizar todos os arquivos da entrega. Preservar o padrão `#ID - Nome da tarefa`; substituir somente caracteres que não sejam permitidos pelo sistema de arquivos do Windows.
+
+Usar obrigatoriamente esta estrutura:
+
+```text
+#ID - Nome da tarefa/
+├── briefing.md
+├── apoio/
+├── prévia/
+│   ├── frente.html
+│   └── verso.html
+├── svg/
+└── script/
+```
+
+Guardar em `apoio/` os materiais específicos da demanda, como fotos, QR codes, logos e referências. Guardar somente os HTMLs de aprovação em `prévia/`, os SVGs solicitados em `svg/` e os JSX correspondentes em `script/`.
 
 Quando o briefing for informado, salvar seu texto em `briefing.md` dentro da pasta da tarefa antes de iniciar a composição. Preservar o conteúdo original e separar claramente quaisquer decisões, correções ou suposições acrescentadas durante o trabalho.
 
@@ -51,12 +71,18 @@ Se largura, altura ou unidade estiverem ausentes e não puderem ser inferidas co
 14. Fazer verificação visual renderizando temporariamente o HTML ou SVG em imagem fora da pasta do projeto. Inspecionar tipografia, hierarquia, espaçamento, recortes, colisões, contraste e legibilidade e, ao terminar, apagar a imagem temporária.
 15. Não salvar prévias PNG, JPG ou outros arquivos raster no projeto, salvo pedido explícito do usuário. Imagens temporárias de verificação não fazem parte dos entregáveis.
 16. Validar o resultado com uma peça real antes de generalizar regras ou criar novos templates.
+17. Trabalhar primeiro somente no HTML/CSS e apresentá-lo para aprovação. Não gerar SVG nem JSX durante essa etapa. Depois que o HTML for aprovado, gerar o SVG — e o JSX correspondente — somente quando o usuário solicitar explicitamente.
 
-## Observação validada no Illustrator
+## Referências
 
-Ao abrir o SVG, o Illustrator pode não preservar de forma confiável os nomes dos grupos `SOURCE__...`. Não depender desses nomes para apagar o texto original.
+- Para o fluxo técnico, leia [references/fluxo-html-svg-illustrator.md](references/fluxo-html-svg-illustrator.md).
+- Para as regras visuais da Pharmapele, leia [references/marca-pharmapele.md](references/marca-pharmapele.md).
 
-Depois de confirmar que o documento correto está aberto, verificar as fontes necessárias e confirmar que a camada `TEXTO EDITAVEL` ainda não existe, o JSX deve remover todos os `textFrames` importados do SVG antes de criar as caixas corrigidas. O script é destinado ao SVG recém-aberto; não deve ser executado depois que outros textos manuais forem adicionados ao documento.
+## Texto no Illustrator
+
+O exportador deve agrupar os textos de origem em `TEXTOS_ORIGINAIS`. O JSX tenta remover seletivamente esse grupo antes de reconstruir as caixas.
+
+Como o Illustrator pode não preservar nomes de grupos, o runtime pode usar fallback somente no SVG recém-aberto: confirmar o nome do documento, verificar as fontes, garantir que `TEXTO EDITAVEL` ainda não existe e aceitar a remoção dos `textFrames` apenas quando a contagem corresponder ao contrato exportado. Se a contagem divergir, interromper sem remover nada.
 
 ## Arquitetura mínima
 
@@ -64,14 +90,17 @@ Depois de confirmar que o documento correto está aberto, verificar as fontes ne
 nome da tarefa
   → pasta exclusiva da entrega
   → briefing.md
-  → HTML/CSS de tamanho fixo
-  → SVG bruto com metadados
+  → apoio/
+  → prévia/ com HTML/CSS de tamanho fixo
+  → aprovação explícita do HTML
+  → solicitação explícita de exportação
+  → svg/ com SVG bruto e metadados
   → Illustrator
-  → JSX específico para o SVG
+  → script/ com JSX específico para o SVG
   → arte editável
 ```
 
-O gerador comum deve cuidar da composição e da conversão. O JSX deve conter somente as correções necessárias ao SVG entregue, evitando uma camada genérica antes de existirem casos reais que a justifiquem.
+Usar `scripts/export-design.js` para converter o DOM renderizado em SVG e gerar o JSX a partir do mesmo contrato. Usar `scripts/illustrator-text-runtime.jsxinc` como runtime comum; cada JSX de página deve conter somente configuração e blocos textuais.
 
 ## Validação do primeiro caso
 
