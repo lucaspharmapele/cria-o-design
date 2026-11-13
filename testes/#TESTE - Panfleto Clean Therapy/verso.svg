@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="148mm" height="210mm" viewBox="0 0 148 210" role="img" aria-label="Verso do panfleto Clean Therapy">
+    <style>
+      @font-face { font-family: MazzardH; src: url('../../fontes/MazzardH-Bold.otf'); font-weight: 700; }
+      @font-face { font-family: MazzardH; src: url('../../fontes/MazzardH-Black.otf'); font-weight: 900; }
+      @font-face { font-family: MazzardM; src: url('../../fontes/MazzardM-Regular.otf'); font-weight: 400; }
+      @font-face { font-family: MazzardM; src: url('../../fontes/MazzardM-SemiBold.otf'); font-weight: 600; }
+      @font-face { font-family: MazzardM; src: url('../../fontes/MazzardM-Bold.otf'); font-weight: 700; }
+      .h { font-family: MazzardH, Arial, sans-serif; }
+      .m { font-family: MazzardM, Arial, sans-serif; }
+      text { dominant-baseline: alphabetic; }
+      .tilt-left { transform: rotate(-2deg); transform-box: fill-box; transform-origin: center; }
+    </style>
+
+    <rect width="148" height="210" fill="#ffffff"/>
+    <polygon points="0,0 148,0 148,61 0,75" fill="#163d6c"/>
+    <polygon points="0,68 148,54 148,63 0,77" fill="#2288c9"/>
+    <rect x="111" y="-4" width="41" height="41" fill="none" stroke="#ffffff" stroke-width="0.45" opacity="0.18" transform="rotate(13 131.5 16.5)"/>
+    <rect x="120" y="5" width="23" height="23" fill="none" stroke="#ffffff" stroke-width="0.55" opacity="0.28" transform="rotate(13 131.5 16.5)"/>
+
+    <g id="SOURCE__back_vegan">
+      <text x="14" y="16" class="m" font-size="2.8" font-weight="700" fill="#ffffff" letter-spacing="0.65">LINHA VEGANA</text>
+    </g>
+    <g id="SOURCE__back_title" class="tilt-left">
+      <text x="14" y="35" class="h" font-size="10" font-weight="900" fill="#ffffff" letter-spacing="-0.2">
+        <tspan x="14" dy="0">CLEAN</tspan>
+        <tspan x="14" dy="10.4">THERAPY</tspan>
+      </text>
+    </g>
+    <g id="SOURCE__back_tagline">
+      <text x="14" y="60" class="m" font-size="3.4" font-weight="400" fill="#ffffff">Ciência e beleza que você sente na pele.</text>
+    </g>
+
+    <g id="SOURCE__back_section_label">
+      <text x="14" y="86" class="m" font-size="2.7" font-weight="700" fill="#2288c9" letter-spacing="0.55">UMA ROTINA DE CUIDADO COMPLETA</text>
+    </g>
+
+    <rect x="8" y="95" width="126" height="20" fill="#e8f3f9"/>
+    <rect x="8" y="95" width="8" height="20" fill="#2288c9"/>
+    <g aria-label="Ícone de gotas Lucide" transform="translate(10 101) scale(.24)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>
+    </g>
+    <g id="SOURCE__back_benefit_1_title">
+      <text x="23" y="103.5" class="h" font-size="3.8" font-weight="700" fill="#163d6c">HIGIENIZAÇÃO FACIAL</text>
+    </g>
+    <g id="SOURCE__back_benefit_1_body">
+      <text x="23" y="110" class="m" font-size="2.7" font-weight="400" fill="#31465c">Limpeza e frescor para o seu ritual de skincare.</text>
+    </g>
+
+    <rect x="20" y="119" width="128" height="20" fill="#163d6c"/>
+    <rect x="20" y="119" width="8" height="20" fill="#2288c9"/>
+    <g aria-label="Ícone de calendário Lucide" transform="translate(21.2 125) scale(.24)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 2v3M16 2v3"/><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M9 15l2 2 4-4"/>
+    </g>
+    <g id="SOURCE__back_benefit_2_title">
+      <text x="34" y="127.5" class="h" font-size="3.8" font-weight="700" fill="#ffffff">CUIDADO DIÁRIO</text>
+    </g>
+    <g id="SOURCE__back_benefit_2_body">
+      <text x="34" y="134" class="m" font-size="2.7" font-weight="400" fill="#ffffff">Produtos para acompanhar cada passo da sua rotina.</text>
+    </g>
+
+    <rect x="8" y="143" width="126" height="20" fill="#e8f3f9"/>
+    <rect x="8" y="143" width="8" height="20" fill="#2288c9"/>
+    <g aria-label="Ícone de folha Lucide" transform="translate(9.2 149) scale(.24)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/>
+    </g>
+    <g id="SOURCE__back_benefit_3_title">
+      <text x="23" y="151.5" class="h" font-size="3.8" font-weight="700" fill="#163d6c">ESCOLHA VEGANA</text>
+    </g>
+    <g id="SOURCE__back_benefit_3_body">
+      <text x="23" y="158" class="m" font-size="2.7" font-weight="400" fill="#31465c">Ciência, beleza e autocuidado na mesma linha.</text>
+    </g>
+
+    <polygon points="0,179 148,165 148,210 0,210" fill="#2288c9"/>
+    <polygon points="0,174 148,160 148,168 0,182" fill="#163d6c"/>
+    <rect x="103" y="178" width="28" height="28" fill="#ffffff"/>
+    <image x="104" y="179" width="26" height="26" href="qr-whatsapp.png" xlink:href="qr-whatsapp.png"/>
+    <g aria-label="Ícone de leitura Lucide" transform="translate(93 185) scale(.28)" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 12h10"/>
+    </g>
+    <g id="SOURCE__back_offer">
+      <text x="14" y="187" class="h" font-size="6.6" font-weight="900" fill="#ffffff">GANHE 10% OFF</text>
+    </g>
+    <g id="SOURCE__back_offer_note">
+      <text x="14" y="195" class="m" font-size="3" font-weight="700" fill="#ffffff">EM TODA A LINHA CLEAN THERAPY.</text>
+    </g>
+    <g id="SOURCE__back_qr_cta">
+      <text x="14" y="202" class="m" font-size="2.35" font-weight="400" fill="#ffffff">APONTE A CÂMERA E FALE COM A LOJA</text>
+    </g>
+  </svg>
