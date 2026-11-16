@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Teste 3 — Verso</title>
+  <style>
+    @font-face { font-family: MazzardH; src: url('../../../assets/fonts/mazzard/MazzardH-Bold.otf'); font-weight: 700; }
+    @font-face { font-family: MazzardH; src: url('../../../assets/fonts/mazzard/MazzardH-Black.otf'); font-weight: 900; }
+    @font-face { font-family: MazzardM; src: url('../../../assets/fonts/mazzard/MazzardM-Regular.otf'); font-weight: 400; }
+    @font-face { font-family: MazzardM; src: url('../../../assets/fonts/mazzard/MazzardM-Bold.otf'); font-weight: 700; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: #e8edf0; }
+    body { display: grid; place-items: center; padding: 20px; }
+    .artboard { position: relative; width: 148mm; height: 210mm; overflow: hidden; background: #005095; color: #fff; }
+    .shape, .asset, .text-block { position: absolute; }
+    .asset { display: block; object-fit: contain; }
+    .text-block { margin: 0; white-space: pre-line; }
+  </style>
+</head>
+<body>
+  <main class="artboard" data-page="verso" data-width-mm="148" data-height-mm="210">
+    <div class="shape" style="left:0;top:0;width:148mm;height:210mm;background:#005095"></div>
+    <div class="shape" style="left:0;top:0;width:148mm;height:11mm;background:#50A6DD"></div>
+    <div class="shape" style="left:10mm;top:48mm;width:128mm;height:93mm;background:#fff"></div>
+    <div class="shape" style="left:10mm;top:141mm;width:128mm;height:2mm;background:#50A6DD"></div>
+    <div class="shape" style="left:0;top:174mm;width:148mm;height:36mm;background:#50A6DD"></div>
+
+    <img class="asset" src="../../../assets/brand/svg/MANUAL DE MARCA - Pharmapele (contexto de IA)_Capsula outline.svg" alt="" style="left:101mm;top:15mm;width:42mm;height:27mm;opacity:.5;transform:rotate(-8deg)">
+    <img class="asset" src="../../../assets/brand/svg/MANUAL DE MARCA - Pharmapele (contexto de IA)_Brilho outline.svg" alt="" style="left:82mm;top:22mm;width:17mm;height:17mm;opacity:.85">
+
+    <p id="back-vegan" class="text-block" data-role="label" data-ai-font="MazzardM-Bold" style="left:11mm;top:18mm;width:48mm;height:6mm;font:700 2.6mm/3mm MazzardM;letter-spacing:.62mm;color:#50A6DD">LINHA VEGANA</p>
+    <h1 id="back-title" class="text-block" data-role="title" data-ai-font="MazzardH-Black" style="left:10mm;top:27mm;width:73mm;height:19mm;font:900 7.8mm/7.6mm MazzardH;letter-spacing:-.12mm;color:#fff">CLEAN THERAPY</h1>
+
+    <div class="shape" style="left:17mm;top:57mm;width:34mm;height:73mm;background:#005095"></div>
+    <div class="shape" style="left:57mm;top:57mm;width:34mm;height:73mm;background:#005095"></div>
+    <div class="shape" style="left:97mm;top:57mm;width:34mm;height:73mm;background:#005095"></div>
+
+    <img class="asset" src="../../../assets/brand/svg/MANUAL DE MARCA - Pharmapele (contexto de IA)_Bisnaga outline.svg" alt="" style="left:27mm;top:63mm;width:14mm;height:25mm">
+    <img class="asset" src="../../../assets/brand/svg/MANUAL DE MARCA - Pharmapele (contexto de IA)_Conta Gotas outline.svg" alt="" style="left:67mm;top:63mm;width:14mm;height:25mm">
+    <img class="asset" src="../../../assets/brand/svg/MANUAL DE MARCA - Pharmapele (contexto de IA)_Frasco Vial outline.svg" alt="" style="left:107mm;top:63mm;width:14mm;height:25mm">
+
+    <h2 id="back-benefit-1-title" class="text-block" data-role="subtitle" data-ai-font="MazzardH-Bold" style="left:21mm;top:94mm;width:26mm;height:12mm;text-align:center;font:700 3.5mm/4mm MazzardH;color:#fff">LIMPEZA
+SUAVE</h2>
+    <p id="back-benefit-1-body" class="text-block" data-role="paragraph" data-ai-font="MazzardM-Regular" style="left:21mm;top:111mm;width:26mm;height:14mm;text-align:center;font:400 2.35mm/3.2mm MazzardM;color:#fff">Higienização e frescor para começar.</p>
+
+    <h2 id="back-benefit-2-title" class="text-block" data-role="subtitle" data-ai-font="MazzardH-Bold" style="left:61mm;top:94mm;width:26mm;height:12mm;text-align:center;font:700 3.5mm/4mm MazzardH;color:#fff">CUIDADO
+DIÁRIO</h2>
+    <p id="back-benefit-2-body" class="text-block" data-role="paragraph" data-ai-font="MazzardM-Regular" style="left:61mm;top:111mm;width:26mm;height:14mm;text-align:center;font:400 2.35mm/3.2mm MazzardM;color:#fff">Uma rotina que acompanha a sua pele.</p>
+
+    <h2 id="back-benefit-3-title" class="text-block" data-role="subtitle" data-ai-font="MazzardH-Bold" style="left:101mm;top:94mm;width:26mm;height:12mm;text-align:center;font:700 3.5mm/4mm MazzardH;color:#fff">ESCOLHA
+VEGANA</h2>
+    <p id="back-benefit-3-body" class="text-block" data-role="paragraph" data-ai-font="MazzardM-Regular" style="left:101mm;top:111mm;width:26mm;height:14mm;text-align:center;font:400 2.35mm/3.2mm MazzardM;color:#fff">Ciência e beleza na mesma linha.</p>
+
+    <p id="back-signature" class="text-block" data-role="paragraph" data-ai-font="MazzardM-Regular" style="left:17mm;top:150mm;width:80mm;height:12mm;font:400 3.3mm/4.6mm MazzardM;color:#fff">Ciência e beleza que você sente na pele.</p>
+
+    <h2 id="back-offer" class="text-block" data-role="title" data-ai-font="MazzardH-Black" style="left:11mm;top:181mm;width:86mm;height:11mm;font:900 6.6mm/7mm MazzardH;color:#005095">GANHE 10% OFF</h2>
+    <p id="back-offer-note" class="text-block" data-role="subtitle" data-ai-font="MazzardM-Bold" style="left:11mm;top:195mm;width:83mm;height:6mm;font:700 2.7mm/3.2mm MazzardM;color:#005095">EM TODA A LINHA CLEAN THERAPY</p>
+    <div class="shape" style="left:107mm;top:168mm;width:31mm;height:31mm;background:#fff"></div>
+    <img class="asset" src="../apoio/qr-whatsapp.png" alt="QR code do WhatsApp" style="left:109mm;top:170mm;width:27mm;height:27mm">
+    <img class="asset" src="../../../assets/icons/simple-icons/whatsapp.svg" alt="" style="left:101mm;top:201mm;width:5mm;height:5mm">
+    <p id="back-whatsapp" class="text-block" data-role="contact" data-ai-font="MazzardM-Bold" style="left:109mm;top:201mm;width:30mm;height:6mm;font:700 2.45mm/3mm MazzardM;color:#005095">81 99559-2532</p>
+  </main>
+</body>
+</html>

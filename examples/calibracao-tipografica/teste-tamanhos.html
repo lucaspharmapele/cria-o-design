@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Calibração tipográfica Pharmapele</title>
+  <style>
+    @font-face { font-family: MazzardM; src: url('../../assets/fonts/mazzard/MazzardM-Regular.otf'); font-weight: 400; }
+    @font-face { font-family: MazzardM; src: url('../../assets/fonts/mazzard/MazzardM-SemiBold.otf'); font-weight: 600; }
+    @font-face { font-family: MazzardH; src: url('../../assets/fonts/mazzard/MazzardH-Bold.otf'); font-weight: 700; }
+    * { box-sizing: border-box; }
+    @page { size: A5 portrait; margin: 0; }
+    html, body { margin: 0; background: #dfe5e8; }
+    body { font-family: MazzardM, sans-serif; color: #102a3a; }
+    .page {
+      width: 148mm;
+      height: 210mm;
+      margin: 10mm auto;
+      padding: 10mm 11mm;
+      overflow: hidden;
+      background: #fff;
+      break-after: page;
+    }
+    h1 { margin: 0; color: #005095; font: 700 18pt/1 MazzardH; }
+    .instructions { margin: 3mm 0 5mm; font: 400 8pt/1.35 MazzardM; }
+    .rule { width: 50mm; height: 2mm; margin: 0 0 5mm; background: #005095; }
+    .rule-label { margin: -4.5mm 0 4mm 53mm; font: 600 7pt/1 MazzardM; color: #005095; }
+    .section { margin: 0 0 4mm; padding-top: 3mm; border-top: .35mm solid #50a6dd; }
+    .section-title { margin: 0 0 2mm; color: #005095; font: 700 10pt/1 MazzardH; text-transform: uppercase; }
+    .sample { display: grid; grid-template-columns: 13mm 1fr; align-items: baseline; margin: 0 0 1.6mm; }
+    .size { font: 600 7pt/1 MazzardM; color: #005095; }
+    .text { white-space: nowrap; }
+    .regular .text { font-family: MazzardM; font-weight: 400; }
+    .semibold .text { font-family: MazzardM; font-weight: 600; }
+    .hbold .text { font-family: MazzardH; font-weight: 700; text-transform: uppercase; }
+    .s6 .text { font-size: 6pt; line-height: 1.2; }
+    .s65 .text { font-size: 6.5pt; line-height: 1.2; }
+    .s7 .text { font-size: 7pt; line-height: 1.2; }
+    .s75 .text { font-size: 7.5pt; line-height: 1.2; }
+    .s8 .text { font-size: 8pt; line-height: 1.2; }
+    .s85 .text { font-size: 8.5pt; line-height: 1.2; }
+    .s9 .text { font-size: 9pt; line-height: 1.2; }
+    .s10 .text { font-size: 10pt; line-height: 1.2; }
+    .s11 .text { font-size: 11pt; line-height: 1.2; }
+    .s12 .text { font-size: 12pt; line-height: 1.2; }
+    .answer { margin-top: 4mm; padding: 3mm; border: .5mm solid #005095; font: 600 8pt/1.35 MazzardM; }
+    @media print {
+      html, body { background: #fff; }
+      .page { margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>TESTE DE TAMANHOS</h1>
+    <p class="instructions">Imprima em A5, escala 100% ou “tamanho real”. Não use “ajustar à página”. A barra abaixo deve medir exatamente 50 mm. Leia a folha na distância normal de uso e marque o menor tamanho confortável, não apenas o menor que consegue decifrar.</p>
+    <div class="rule"></div><p class="rule-label">CONTROLE: 50 mm</p>
+
+    <section class="section regular">
+      <h2 class="section-title">Mazzard M Regular - corpo e contatos</h2>
+      <div class="sample s6"><span class="size">6 pt</span><span class="text">Ciência e beleza na sua pele - 81 99559-2532</span></div>
+      <div class="sample s65"><span class="size">6,5 pt</span><span class="text">Ciência e beleza na sua pele - 81 99559-2532</span></div>
+      <div class="sample s7"><span class="size">7 pt</span><span class="text">Ciência e beleza na sua pele - 81 99559-2532</span></div>
+      <div class="sample s75"><span class="size">7,5 pt</span><span class="text">Ciência e beleza na sua pele - 81 99559-2532</span></div>
+      <div class="sample s8"><span class="size">8 pt</span><span class="text">Ciência e beleza na sua pele - 81 99559-2532</span></div>
+      <div class="sample s85"><span class="size">8,5 pt</span><span class="text">Ciência e beleza na sua pele - 81 99559-2532</span></div>
+      <div class="sample s9"><span class="size">9 pt</span><span class="text">Ciência e beleza na sua pele - 81 99559-2532</span></div>
+      <div class="sample s10"><span class="size">10 pt</span><span class="text">Ciência e beleza na sua pele - 81 99559-2532</span></div>
+    </section>
+
+    <section class="section semibold">
+      <h2 class="section-title">Mazzard M Semi Bold - legendas e chamadas</h2>
+      <div class="sample s6"><span class="size">6 pt</span><span class="text">APRESENTANDO ESTE CUPOM NA LOJA</span></div>
+      <div class="sample s7"><span class="size">7 pt</span><span class="text">APRESENTANDO ESTE CUPOM NA LOJA</span></div>
+      <div class="sample s8"><span class="size">8 pt</span><span class="text">APRESENTANDO ESTE CUPOM NA LOJA</span></div>
+      <div class="sample s9"><span class="size">9 pt</span><span class="text">APRESENTANDO ESTE CUPOM NA LOJA</span></div>
+      <div class="sample s10"><span class="size">10 pt</span><span class="text">APRESENTANDO ESTE CUPOM NA LOJA</span></div>
+    </section>
+
+    <section class="section hbold">
+      <h2 class="section-title">Mazzard H Bold - subtítulos</h2>
+      <div class="sample s7"><span class="size">7 pt</span><span class="text">LINHA VEGANA CLEAN THERAPY</span></div>
+      <div class="sample s8"><span class="size">8 pt</span><span class="text">LINHA VEGANA CLEAN THERAPY</span></div>
+      <div class="sample s9"><span class="size">9 pt</span><span class="text">LINHA VEGANA CLEAN THERAPY</span></div>
+      <div class="sample s10"><span class="size">10 pt</span><span class="text">LINHA VEGANA CLEAN THERAPY</span></div>
+      <div class="sample s12"><span class="size">12 pt</span><span class="text">LINHA VEGANA CLEAN THERAPY</span></div>
+    </section>
+
+    <p class="answer">Resultado: Regular ____ pt &nbsp;•&nbsp; Semi Bold ____ pt &nbsp;•&nbsp; H Bold ____ pt</p>
+  </main>
+</body>
+</html>

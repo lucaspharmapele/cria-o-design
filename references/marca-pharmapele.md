@@ -14,9 +14,12 @@ Este documento registra as regras visuais que orientarão as composições. Ele 
 - Usar os grafismos, ícones, imagens e demais elementos oficiais disponíveis no acervo.
 - Preferir ícones prontos e reconhecíveis, obtidos como código em bibliotecas como [Icones.js](https://icones.js.org/) e fontes similares.
 - Não gerar ícones SVG novos com o modelo quando houver um ícone pronto adequado.
+- Usar os SVGs exclusivos da marca somente como elementos decorativos, grafismos de fundo ou apoio visual.
+- Para WhatsApp, Instagram, localização, benefícios e itens de listas, usar ícones funcionais de bibliotecas prontas, como Lucide ou Simple Icons.
+- Não usar ícones exclusivos da marca para representar produtos, etapas ou itens de lista.
 - Sobreposições e transparências são permitidas.
 - Sombras e degradês não devem ser produzidos no HTML; quando necessários, devem ser feitos no Illustrator.
-- Formas orgânicas também devem ser criadas apenas na etapa de finalização no Illustrator.
+- Não gerar novos SVGs ou formas orgânicas no HTML. É permitido incorporar artisticamente os SVGs oficiais já existentes no acervo.
 
 ### Acervo
 
@@ -30,18 +33,19 @@ Antes de criar uma peça, consultar esse acervo e reutilizar os elementos apropr
 
 ### Paleta principal
 
-| Cor | HEX | RGB | Uso aproximado |
-| --- | --- | --- | --- |
-| Azul claro | `#2288c9` | `34, 136, 201` | 80% dos elementos azuis; títulos, blocos e elementos-chave |
-| Azul escuro | `#163d6c` | `22, 61, 108` | 20% dos elementos azuis; títulos, blocos e elementos-chave |
+| Cor | Pantone | CMYK | HEX | RGB | Uso aproximado |
+| --- | --- | --- | --- | --- | --- |
+| Azul claro | Não informado | `66, 21, 0, 0` | `#50A6DD` | `80, 166, 221` | Títulos, blocos e elementos-chave |
+| Azul institucional | `301 U` | `100, 70, 10, 0` | `#005095` | `0, 80, 149` | Títulos, blocos e elementos-chave |
 
 - Usar fundos neutros e claros, normalmente brancos ou cinza-claro.
 - Fundos inteiramente azuis são permitidos quando o briefing justificar, usando um dos dois tons oficiais.
+- Sobre qualquer um dos dois azuis oficiais, usar texto branco. Se o branco não ficar legível sobre o azul-claro, reposicionar ou redimensionar o texto em vez de usar cinza ou outro azul.
 - O briefing pode alterar a densidade e a distribuição das cores.
 - Não há combinações reservadas ou proibidas definidas neste momento.
 - Degradê para transparência é permitido, mas deve ser aplicado no Illustrator, nunca gerado no HTML.
 - O tom exato do cinza-claro ainda não foi definido.
-- Valores CMYK ainda precisam ser fornecidos ou confirmados pelo material oficial.
+- Tratar os valores acima como as especificações oficiais da marca. O Pantone do azul claro não foi informado no material recebido.
 
 ## Formas e composição
 
@@ -51,7 +55,7 @@ Antes de criar uma peça, consultar esse acervo e reutilizar os elementos apropr
 - Criar composições normalmente limpas e espaçosas; o briefing pode pedir maior densidade.
 - Valorizar espaço branco.
 - Alinhamento, hierarquia, sobreposição e densidade podem variar conforme o formato e o briefing.
-- Não gerar formas orgânicas no HTML.
+- Não desenhar novas formas orgânicas no HTML. SVGs oficiais do acervo podem ser incorporados como decoração, grafismo de fundo ou apoio visual.
 
 ## Tipografia
 
@@ -94,6 +98,20 @@ As 54 faces do acervo também estão instaladas para o usuário atual do Windows
 - Destaques, preços, percentuais, produtos, números e unidades podem receber tratamento próprio quando o briefing ou o produto pedirem.
 - Não usar fontes alternativas.
 
+### Hierarquia calibrada para impressão
+
+| Função | Mínimo | Orientação tipográfica |
+| --- | --- | --- |
+| Corpo | `8 pt` | Priorizar leitura contínua; normalmente Mazzard M Regular ou Medium. |
+| Contato | `10 pt` | Tratar como destaque independente, não como corpo. Preferir Mazzard H em peso moderado ou Mazzard M Semi Bold/Bold, sem precisar repetir o título. |
+| Legenda | `10 pt` | Usar tratamento próprio de identificação ou explicação; não herdar automaticamente o estilo da chamada. |
+| Chamada | `10 pt` | Dar caráter de orientação ou ação; pode usar maior peso, caixa alta ou espaçamento específico. |
+| Subtítulo | `10 pt` | Manter hierarquia clara abaixo do título e acima do corpo. |
+
+Título, subtítulo, corpo, contato, legenda e chamada são funções independentes. Mesmo quando duas funções usam o mesmo tamanho mínimo, a escolha de subfamília, peso, caixa, tracking e entrelinha deve responder à função de cada bloco.
+
+Os valores mínimos são pisos de legibilidade. Textos curtos inseridos em áreas amplas devem ganhar escala quando parecerem perdidos ou produzirem uma mancha gráfica fraca. Ajustar primeiro tamanho, largura da caixa, quebras de linha e entrelinha; não usar tracking excessivo como compensação. Essa avaliação é óptica e deve respeitar tanto o espaço vazio intencional quanto a hierarquia geral da peça.
+
 ## Fotografia
 
 - Tema, pessoas, perfis, expressões, poses, enquadramento, cenário, contraste e acabamento dependem do briefing.
@@ -107,6 +125,7 @@ As 54 faces do acervo também estão instaladas para o usuário atual do Windows
 ## Logotipo
 
 - Usar somente os arquivos oficiais que forem adicionados ao acervo.
+- Quando o logotipo estiver aplicado sobre qualquer fundo azul da marca, usar obrigatoriamente sua versão branca.
 - Versão preferencial, área de proteção, tamanho mínimo, fundos permitidos e aplicações proibidas ainda precisam ser documentados.
 
 ## Referências
@@ -121,6 +140,6 @@ As 54 faces do acervo também estão instaladas para o usuário atual do Windows
 
 - Receber e catalogar o acervo visual.
 - Validar no navegador e no Illustrator os nomes efetivos das fontes Mazzard.
-- Definir o cinza-claro padrão e os valores CMYK oficiais.
+- Definir o cinza-claro padrão e, se existir, o Pantone oficial do azul claro.
 - Documentar as regras de uso do logotipo.
 - Adicionar peças aprovadas do rebranding como referência.

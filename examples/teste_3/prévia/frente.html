@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Teste 3 — Frente</title>
+  <style>
+    @font-face { font-family: MazzardH; src: url('../../../assets/fonts/mazzard/MazzardH-Bold.otf'); font-weight: 700; }
+    @font-face { font-family: MazzardH; src: url('../../../assets/fonts/mazzard/MazzardH-Black.otf'); font-weight: 900; }
+    @font-face { font-family: MazzardM; src: url('../../../assets/fonts/mazzard/MazzardM-Regular.otf'); font-weight: 400; }
+    @font-face { font-family: MazzardM; src: url('../../../assets/fonts/mazzard/MazzardM-SemiBold.otf'); font-weight: 600; }
+    @font-face { font-family: MazzardM; src: url('../../../assets/fonts/mazzard/MazzardM-Bold.otf'); font-weight: 700; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: #e8edf0; }
+    body { display: grid; place-items: center; padding: 20px; }
+    .artboard { position: relative; width: 148mm; height: 210mm; overflow: hidden; background: #fff; color: #005095; }
+    .shape, .asset, .text-block { position: absolute; }
+    .asset { display: block; object-fit: contain; }
+    .text-block { margin: 0; white-space: pre-line; }
+  </style>
+</head>
+<body>
+  <main class="artboard" data-page="frente" data-width-mm="148" data-height-mm="210">
+    <div class="shape" style="left:0;top:0;width:45mm;height:210mm;background:#005095"></div>
+    <div class="shape" style="left:45mm;top:0;width:103mm;height:13mm;background:#50A6DD"></div>
+    <div class="shape" style="left:45mm;top:13mm;width:4mm;height:197mm;background:#50A6DD"></div>
+    <div class="shape" style="left:54mm;top:118mm;width:84mm;height:1mm;background:#50A6DD"></div>
+
+    <img class="asset" src="../../../assets/brand/svg/MANUAL DE MARCA - Pharmapele (contexto de IA)_Erlenmeyer outline.svg" alt="" style="left:-25mm;top:19mm;width:90mm;height:94mm;opacity:.42">
+    <img class="asset" src="../../../assets/brand/svg/MANUAL DE MARCA - Pharmapele (contexto de IA)_Brilho.svg" alt="" style="left:10mm;top:118mm;width:25mm;height:25mm;opacity:.95">
+    <img class="asset" src="../../../assets/brand/svg/MANUAL DE MARCA - Pharmapele (contexto de IA)_Conta Gotas outline.svg" alt="" style="left:16mm;top:149mm;width:16mm;height:29mm;opacity:.8">
+    <img class="asset" src="../../../assets/brand/svg/MANUAL DE MARCA - Pharmapele (contexto de IA)_Logo - Pharmapele.svg" alt="Pharmapele" style="left:55mm;top:22mm;width:70mm;height:20mm">
+
+    <p id="front-store" class="text-block" data-role="label" data-ai-font="MazzardM-Bold" style="left:55mm;top:43mm;width:72mm;height:6mm;font:700 2.6mm/3mm MazzardM;letter-spacing:.55mm;color:#50A6DD">PAULISTA</p>
+    <h1 id="front-headline" class="text-block" data-role="title" data-ai-font="MazzardH-Black" style="left:54mm;top:57mm;width:82mm;height:34mm;font:900 9.4mm/9.3mm MazzardH;letter-spacing:-.18mm;color:#005095">UM MOMENTO
+SÓ SEU.</h1>
+    <p id="front-intro" class="text-block" data-role="paragraph" data-ai-font="MazzardM-Regular" style="left:55mm;top:96mm;width:75mm;height:16mm;font:400 3.35mm/4.8mm MazzardM;color:#263f53">Você merece um cuidado único, com ciência, beleza e acolhimento.</p>
+
+    <p id="front-coupon-label" class="text-block" data-role="label" data-ai-font="MazzardM-Bold" style="left:55mm;top:127mm;width:74mm;height:6mm;font:700 2.5mm/3mm MazzardM;letter-spacing:.48mm;color:#50A6DD">APRESENTE ESTE CUPOM</p>
+    <h2 id="front-coupon-title" class="text-block" data-role="subtitle" data-ai-font="MazzardH-Black" style="left:55mm;top:137mm;width:78mm;height:22mm;font:900 6.3mm/6.8mm MazzardH;color:#005095">REVITALIZAÇÃO
+FACIAL GRATUITA</h2>
+    <p id="front-coupon-note" class="text-block" data-role="paragraph" data-ai-font="MazzardM-Regular" style="left:55mm;top:162mm;width:72mm;height:9mm;font:400 2.8mm/3.8mm MazzardM;color:#263f53">Agende sua experiência em nossa loja.</p>
+
+    <img class="asset" src="../../../assets/icons/simple-icons/whatsapp.svg" alt="" style="left:55mm;top:181mm;width:5mm;height:5mm">
+    <p id="front-whatsapp" class="text-block" data-role="contact" data-ai-font="MazzardM-Bold" style="left:63mm;top:181mm;width:38mm;height:6mm;font:700 2.8mm/3.4mm MazzardM;color:#005095">81 99559-2532</p>
+    <img class="asset" src="../../../assets/icons/simple-icons/instagram.svg" alt="" style="left:104mm;top:181mm;width:5mm;height:5mm">
+    <p id="front-instagram" class="text-block" data-role="contact" data-ai-font="MazzardM-SemiBold" style="left:112mm;top:181mm;width:32mm;height:8mm;font:600 2.35mm/3mm MazzardM;color:#005095">@pharmapelepaulista</p>
+    <img class="asset" src="../../../assets/icons/lucide/map-pin.svg" alt="" style="left:55mm;top:193mm;width:5mm;height:5mm">
+    <p id="front-address" class="text-block" data-role="contact" data-ai-font="MazzardM-Regular" style="left:63mm;top:192mm;width:72mm;height:11mm;font:400 2.35mm/3.3mm MazzardM;color:#263f53">Av. Mal. Floriano Peixoto, 56 – 1A
+Paulista</p>
+  </main>
+</body>
+</html>

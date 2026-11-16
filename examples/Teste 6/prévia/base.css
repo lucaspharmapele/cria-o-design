@@ -1,0 +1,4 @@
+@font-face{font-family:H;src:url('../../../assets/fonts/mazzard/MazzardH-Black.otf');font-weight:900}
+@font-face{font-family:M;src:url('../../../assets/fonts/mazzard/MazzardM-Regular.otf');font-weight:400}
+@font-face{font-family:M;src:url('../../../assets/fonts/mazzard/MazzardM-Bold.otf');font-weight:700}
+*{box-sizing:border-box}html,body{margin:0;background:#e7ecef}body{display:grid;place-items:center;padding:20px}.artboard{position:relative;width:148mm;height:210mm;overflow:hidden}.shape,.asset,.text-block{position:absolute}.asset{object-fit:contain}.text-block{margin:0;white-space:pre-line}.white{color:#fff}.blue{color:#005095}.ink{color:#102a3a}.invert{filter:brightness(0) invert(1)}
