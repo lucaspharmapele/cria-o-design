@@ -33,11 +33,17 @@ var CriacaoDesign = (function () {
         return "protegida por contagem (" + count + " textos)";
     }
 
+    // Folga: o Illustrator mede o texto um pouco mais largo que o navegador; sem ela a última palavra quebra.
+    // As quebras de linha já vêm explícitas do HTML, então a folga não altera a diagramação.
+    var SLACK_WIDTH_MM = 3;
+
     function createAreaText(doc, layer, block) {
         var art = doc.artboards[doc.artboards.getActiveArtboardIndex()].artboardRect;
-        var left = art[0] + mm(block.x);
+        var shift = block.align === "center" ? SLACK_WIDTH_MM / 2 : block.align === "right" ? SLACK_WIDTH_MM : 0;
+        var left = art[0] + mm(block.x - shift);
         var top = art[1] - mm(block.y);
-        var path = layer.pathItems.rectangle(top, left, mm(block.width), mm(block.height));
+        var height = mm(block.height) + block.leading;
+        var path = layer.pathItems.rectangle(top, left, mm(block.width + SLACK_WIDTH_MM), height);
         path.stroked = false;
         path.filled = false;
         var frame = doc.textFrames.areaText(path);
@@ -51,6 +57,7 @@ var CriacaoDesign = (function () {
         range.characterAttributes.tracking = block.tracking;
         range.characterAttributes.fillColor = rgb(block.color);
         range.paragraphAttributes.justification = justification(block.align);
+        range.paragraphAttributes.hyphenation = false;
         if (block.rotation) frame.rotate(block.rotation);
     }
 
@@ -62,7 +69,7 @@ var CriacaoDesign = (function () {
 
     function getFont(name) {
         try { return app.textFonts.getByName(name); }
-        catch (_) { throw new Error("Fonte não encontrada no Illustrator: " + name); }
+        catch (_) { throw new Error("Fonte não encontrada no Illustrator: " + name + ". Instale as fontes da pasta assets/fonts/mazzard da skill (clique direito no .otf > Instalar), reinicie o Illustrator e rode o script de novo. Nada foi alterado."); }
     }
 
     function rgb(hex) {

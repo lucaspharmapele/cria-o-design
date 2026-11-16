@@ -67,7 +67,7 @@ Depois da aprovação explícita do HTML e somente quando o usuário solicitar a
 5. Gerar o JSX para reunir as linhas fragmentadas de cada bloco em uma única caixa de texto editável no Illustrator.
 6. Manter blocos e níveis hierárquicos diferentes em caixas diferentes. Título, subtítulo, corpo, contato, legenda e chamada não devem compartilhar a mesma caixa, mesmo quando aparecem juntos visualmente.
 7. Preservar quebras de linha intencionais e a aparência definida no HTML/CSS.
-8. Usar as fontes instaladas, sem converter texto em contornos no fluxo normal.
+8. Usar exclusivamente a família Mazzard, sem converter texto em contornos no fluxo normal. No HTML, carregar os OTF de `assets/fonts/mazzard/` por `@font-face`, para a prévia nunca cair em outra fonte. No Illustrator, o JSX usa a Mazzard instalada no sistema; se alguma face não estiver instalada, o JSX interrompe sem alterar nada e indica qual falta. Nesse caso, orientar o usuário a instalar as faces de `assets/fonts/mazzard/` (clique direito no arquivo `.otf` → Instalar), reiniciar o Illustrator e rodar o JSX de novo.
 9. Nomear e agrupar elementos de forma útil para a edição manual.
 10. Usar artisticamente os SVGs exclusivos da marca apenas como decoração, grafismo de fundo ou apoio visual. Para itens, listas, benefícios, etapas e contatos, usar SVGs funcionais de bibliotecas reconhecidas, como Lucide ou Simple Icons. Manter consistente o estilo dos ícones funcionais da mesma peça.
 11. Sempre que houver um telefone de contato, usar o símbolo oficial ou reconhecível do WhatsApp. Não substituir por balão de conversa, telefone genérico ou outro símbolo que altere o significado.
@@ -85,6 +85,8 @@ Depois da aprovação explícita do HTML e somente quando o usuário solicitar a
 23. Tratar os tamanhos mínimos apenas como pisos de legibilidade, não como tamanhos padrão. Quando um bloco tiver pouco texto e uma área ampla, ampliar a tipografia e rever largura da caixa, quebras de linha e entrelinha para que o conteúdo participe melhor da mancha gráfica. Evitar texto pequeno perdido em caixas grandes e não tentar preencher o espaço apenas com tracking excessivo. Preservar espaço vazio quando ele for intencional e não ampliar a ponto de romper a hierarquia da composição.
 24. Quando um texto não couber, corrigir nesta ordem: reposicionar o bloco, ampliar sua área, ajustar a entrelinha, rever a composição e só então criar quebras editoriais intencionais. Não reduzir abaixo do mínimo. Manter telefones, perfis e endereços semanticamente íntegros na mesma caixa e evitar quebras causadas apenas por falta de espaço.
 25. Depois de qualquer alteração global de cor ou tipografia, repetir a verificação visual de todas as páginas. Não recolorir automaticamente elementos que já estejam visualmente aprovados.
+26. Inserir toda imagem, logo, grafismo e ícone como `<img class="asset">` posicionado diretamente na `.artboard`, com caminho relativo para um arquivo local da tarefa (`apoio/`) ou do acervo (`assets/`). Não usar `background-image`, `<svg>` inline, filtros CSS nem `mix-blend-mode`: o exportador não os converte. Para mudar a cor de um SVG, salvar uma cópia recolorida em `apoio/elementos/`.
+27. Gerar o SVG sempre por `scripts/export-design.ps1`, nunca à mão: são eles que aplicam as regras de vínculo descritas em "Imagens no Illustrator".
 
 ## Referências
 
@@ -93,9 +95,26 @@ Depois da aprovação explícita do HTML e somente quando o usuário solicitar a
 
 ## Texto no Illustrator
 
+Como as quebras de linha vêm explícitas do HTML, o runtime cria cada caixa com folga de 3 mm na largura (estendida conforme o alinhamento) e de uma entrelinha na altura, e desliga a hifenização. Sem isso, o Illustrator, que mede o texto um pouco mais largo que o navegador e hifeniza por padrão, quebra a última palavra e deixa texto oculto. O exportador mede as caixas com valores fracionários do estilo calculado, não com `offsetWidth`, que arredonda para pixel inteiro.
+
+Alinhamentos aceitos: esquerda, centro e direita (`text-align: left`, `center` ou `right`). Para centralizar ou alinhar à direita, definir `width` na caixa do HTML: sem largura, a caixa tem o tamanho do texto e o alinhamento não aparece. O SVG e o JSX recebem o mesmo alinhamento, e a folga da caixa é distribuída de acordo com ele.
+
 O exportador deve agrupar os textos de origem em `TEXTOS_ORIGINAIS`. O JSX tenta remover seletivamente esse grupo antes de reconstruir as caixas.
 
 Como o Illustrator pode não preservar nomes de grupos, o runtime pode usar fallback somente no SVG recém-aberto: confirmar o nome do documento, verificar as fontes, garantir que `TEXTO EDITAVEL` ainda não existe e aceitar a remoção dos `textFrames` apenas quando a contagem corresponder ao contrato exportado. Se a contagem divergir, interromper sem remover nada.
+
+## Imagens no Illustrator
+
+Comportamentos do importador de SVG do Illustrator, confirmados no Teste 7, e como `scripts/dom-to-svg.js` os contorna:
+
+| Comportamento do Illustrator | Solução no exportador |
+| --- | --- |
+| Ignora `href` (SVG 2) e mostra o alerta de arquivo vinculado `""`. | Usar `xlink:href` e declarar `xmlns:xlink` no `<svg>`. |
+| Aplica duas vezes o `x`/`y` de `<image>`, deslocando a imagem para o dobro da distância. | Gravar `<image>` sem `x`/`y` e posicionar com `transform="translate(x y)"`. |
+| Não respeita `preserveAspectRatio`: a foto vaza da caixa quando a proporção difere. | Calcular a caixa exata da imagem (equivalente a `object-fit: contain`) antes de gravar. |
+| Não vincula SVG dentro de SVG (mostra caixa com X). | Embutir logo, grafismos e ícones `.svg` como vetor editável, com classes e ids prefixados por asset. |
+
+Resultado: PNG/JPG ficam fora do SVG, vinculados pelo caminho relativo real (por exemplo `../apoio/natallia.png`), e o SVG continua leve. Nomes com espaço e parênteses funcionam. Manter a pasta da tarefa inteira para os vínculos não quebrarem.
 
 ## Arquitetura mínima
 
@@ -113,7 +132,7 @@ nome da tarefa
   → arte editável
 ```
 
-Usar `scripts/export-design.js` para converter o DOM renderizado em SVG e gerar o JSX a partir do mesmo contrato. Usar `scripts/illustrator-text-runtime.jsxinc` como runtime comum; cada JSX de página deve conter somente configuração e blocos textuais.
+Usar `scripts/export-design.ps1 -Html <página.html> -Svg <saída.svg> -Jsx <saída.jsx>` para converter o DOM renderizado em SVG e gerar o JSX a partir do mesmo contrato. Ele roda no PowerShell do Windows com o Chrome, sem outras dependências, e usa `scripts/dom-to-svg.js` dentro do navegador. Usar `scripts/illustrator-text-runtime.jsxinc` como runtime comum; cada JSX de página deve conter somente configuração e blocos textuais.
 
 ## Validação do primeiro caso
 
@@ -130,6 +149,8 @@ Antes de considerar a skill pronta, verificar no Illustrator:
 - ocupação óptica dos blocos e equilíbrio da mancha gráfica;
 - contraste de cada texto contra seu fundo efetivo;
 - fidelidade da copy ao briefing;
+- imagens PNG/JPG listadas como vinculadas no painel Vínculos, sem alerta de vínculo ausente, nas mesmas posições e proporções do HTML;
+- logo, grafismos e ícones presentes como vetor;
 - organização dos demais objetos.
 
 Os detalhes da identidade visual, incluindo fontes, paleta, grafismos e regras de marca, devem ser obtidos futuramente por meio da skill de identidade visual da Pharmapele.
